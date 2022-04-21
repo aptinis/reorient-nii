@@ -1,0 +1,35 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: "Unit Tests"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry
+        run: |
+          export POETRY_VERSION=1.1.12
+          curl -sSL https://install.python-poetry.org | python3 -
+          export PATH="${HOME}/.local/bin:$PATH"
+          echo "${PATH}" >> "${GITHUB_PATH}"
+          poetry config virtualenvs.create false
+
+      - name: Install dependencies
+        run: |
+          poetry install --no-interaction
+
+      - name: Run Test Suite
+        run: |
+          pytest src/ tests/
