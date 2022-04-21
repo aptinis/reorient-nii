@@ -1,8 +1,15 @@
 [tool.poetry]
 name = "reorient-nii"
 version = "0.1.0"
-description = ""
+description = "Load and reorient nifti images"
 authors = ["aptinis <8akp1@queensu.ca>"]
+license = "Apache-2.0"
+
+readme = "README.md"
+
+homepage = "https://github.com/aptinis/reorient-nii"
+repository = "https://github.com/aptinis/reorient-nii"
+documentation = "https://github.com/aptinis/reorient-nii"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -16,6 +23,7 @@ reorder-python-imports = "^3.0.1"
 pre-commit = "^2.18.1"
 bump2version = "^1.0.1"
 gitig = "^1.0.0"
+pytest = "^7.1.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
