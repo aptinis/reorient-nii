@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "reorient-nii"
-version = "0.1.0"
+version = "1.0.0"
 description = "Load and reorient nifti images"
 authors = ["aptinis <8akp1@queensu.ca>"]
 license = "Apache-2.0"

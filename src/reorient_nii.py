@@ -7,7 +7,7 @@ from nibabel.orientations import axcodes2ornt
 from nibabel.orientations import ornt_transform
 
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 
 def reorient(
